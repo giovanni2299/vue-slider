@@ -31,6 +31,20 @@
                 }
         ]
       }
+    },
+    methods: {
+        prev(){
+            this.current--
+            if(this.current < 0){
+                this.current = 4;
+            }
+        },
+        next(){
+            this.current++
+            if(this.current > 4){
+                this.current = 0;
+            }
+        }
     }
   }).mount('#app')
 
