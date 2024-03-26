@@ -37,6 +37,7 @@
             this.current--
             if(this.current < 0){
                 this.current = 4;
+                
             }
         },
         next(){
