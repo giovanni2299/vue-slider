@@ -34,6 +34,7 @@ createApp({
 
         }
     },
+
     mounted() {
         this.intervalImage = setInterval(() => {
             if (this.currentIndex !== this.slides.length - 1) {
@@ -64,28 +65,27 @@ createApp({
 
         },
         stopSlide() {
-            if (this.intervalImage !== null) {
+            if (this.currentIndex !== null) {
                 clearInterval(this.intervalImage);
                 intervalImage = null;
             }
-        }
-    },
-    // goto(newIndex) {
-    //     this.currentIndex = newIndex;
-    // },
-    prev() {
-        this.currentIndex--
-        if (this.currentIndex < 0) {
-            this.currentIndex = 4;
-
-        }
-    },
-    next() {
-        this.currentIndex++
-        if (this.currentIndex > 4) {
-            this.currentIndex = 0;
+        },
+        prev() {
+            this.currentIndex--
+            if (this.currentIndex < 0) {
+                this.currentIndex = 4;
+    
+            }
+        },
+        next() {
+            this.currentIndex++
+            if (this.currentIndex > 4) {
+                this.currentIndex = 0;
+            }
         }
     }
+    
+   
 
 }).mount('#app')
 
