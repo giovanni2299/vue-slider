@@ -70,11 +70,11 @@ createApp({
             }
         }
     },
-    goto(newIndex) {
-        this.currentIndex = newIndex;
-    },
+    // goto(newIndex) {
+    //     this.currentIndex = newIndex;
+    // },
     prev() {
-        this.current--
+        this.currentIndex--
         if (this.currentIndex < 0) {
             this.currentIndex = 4;
 
@@ -86,5 +86,6 @@ createApp({
             this.currentIndex = 0;
         }
     }
+
 }).mount('#app')
 
