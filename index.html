@@ -19,11 +19,15 @@
             <div class="slider-wrapper" tabindex="0">
 
                 <div class="item">
-                    <img :src="slides[current].image" alt="Spiderman" />
+                    <img
+                     :src="slides[currentIndex].image" 
+                     @mouseover="stopSlide()"
+                     @mouseleave="startSlide()"
+                     alt="Spiderman" />
                     <div class="text">
-                        <h3>{{slides[current].title}}</h3>
+                        <h3>{{slides[currentIndex].title}}</h3>
                         <p>
-                            {{slides[current].text}}
+                            {{slides[currentIndex].text}}
                         </p>
                     </div>
                 </div>
@@ -32,13 +36,13 @@
                     <div class="prev" @click="prev()"></div>
                     <div class="next" @click="next()"></div>
                     <div
-                    @click="current = i" 
-                    :class="current === i ? 'active' : '' "
+                    @click="goto(i)" 
+                    :class="currentIndex === i ? 'active' : '' "
                     class="thumb"
-                    v-for="(current, i) in slides"
+                    v-for="(currentImg, i) in slides"
                     > <!--
                          -->
-                        <img :src="current.image" alt="Svezia" />
+                        <img :src="currentImg.image" alt="Svezia" />
                         
                     </div>
                     <!-- <div class="thumb">
